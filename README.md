@@ -1,2 +1,0 @@
-# kamilkuzara.github.io
-Resume
