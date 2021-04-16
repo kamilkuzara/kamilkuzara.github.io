@@ -1,0 +1,530 @@
+/*Define CSS variables to use throughout the stylesheet*/
+:root{
+  --mainText: #fff;
+	--secondaryText: #eeeeee;
+
+  --mainColour: #15202B;
+	--secondaryColour: #192734;
+  --tertiaryColour: #17a2b8;
+  --quaternaryColour: #de0051;
+  --lineNumberingBgColour: #080e14;
+  --lineNumbering: #757575;
+
+  --previewBg: rgba(25, 39, 52, 0.8);
+  --previewShadow: #111921;
+
+  --borderColour: #164D56;
+}
+
+.hidden{
+  display: none;
+}
+
+/* General */
+html{
+  scroll-behavior: smooth; /* Set the smooth scroll for better UX */
+}
+
+/* Get rid of the default browser padding and margins for the document and the body section */
+html, body{
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, strong{
+  /* Set unified colour and font settings for all the headings */
+  color: var(--mainText);
+  font-family: "Russo One", sans-serif; /* Use the custom font added in the html document. The way it is specified here is taken from Google Fonts */
+  font-weight: 500; /* Not sure how it works exactly but it changes how thick the font/letters are */
+}
+
+p, li, span, label, input, textarea{
+  /* Set unified colour and font settings for all other elements */
+  color: var(--secondaryText);
+  font-family: "Roboto Mono", monospace;
+}
+
+a{
+  /* Optional styling for the links (in case I use them) */
+  text-decoration: none;
+  color: #17a2b8;
+}
+
+ul{
+  /* Optional styling for the unordered lists (in case I use them) */
+  list-style: none;
+}
+
+/* Specify custom font sizes for the headings. Note it's on top of choosing a custom font and the weight => font-weight!=font-size */
+h1{ font-size: 56px; }
+h2{ font-size: 36px; }
+h3{ font-size: 28px; }
+h4{ font-size: 24px; }
+h5{ font-size: 20px; }
+h6{ font-size: 16px; }
+
+section{
+  border-bottom: 1px solid var(--borderColour); /* Specify the bottom border in terms of thickness, type (solid, dotted, etc.) and colour */
+  overflow: auto; /* !!!!!!!!! Don't know what it does */
+}
+
+.section-one{
+  background-color: var(--mainColour);  /* Set the background colour using the variable */
+}
+
+.section-two{
+  background-color: var(--secondaryColour);
+}
+
+.main-container{
+  width: 1200px;
+  margin: 0 auto; /* Set the margin to 0 and centre the content. ("margin: auto;" centers the content PROVIDED we set the width of the element as is done above) */
+}
+
+/* Intro section */
+.greeting-wrapper{
+  display: grid;  /* Create a grid area to display the elements of that element */
+  justify-content: center;  /* Centre the elements horizontally */
+  align-content: center;  /* Centre the elements vertically */
+  text-align: center; /* Centre the text within the elements. Note: compare with above ("justify-content: center") */
+  min-height: 13em; /* Set the height rather than using the automatic height (elements + padding + margins). If specified height is less than automatic height, then automatic height is used (note: MIN-height is used) */
+}
+
+#main-header{
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+#intro-replacement{
+  display: none;
+}
+
+.intro-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Define how to divide the space into columns, 1fr = 1 fraction */
+  grid-template-rows: 3em 27em; /* Define the rows and their height. For details about the em unit: https://www.w3schools.com/cssref/css_units.asp */
+  grid-template-areas:  /* Define how to organise the rows. Each row has to have an area specified for all columns (unless we don't use grid-template-columns => columns created based on the rows defined here). Note: if we want navigation to take up the entire row, we have to specify this area for both columns */
+    "navigation navigation"
+    "left-column right-column";
+
+  background-color: var(--secondaryColour);
+  border: 1px solid var(--borderColour);
+
+  /* Set the top corner radius. Note, the same is done in "navigation". It has to be this way for the corners to be rounded. For more info, see: https://www.w3schools.com/css/css3_borders.asp */
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  /* Define a shadow for the element. Code automatically generated from https://www.cssmatic.com/box-shadow */
+  -webkit-box-shadow: 2px -2px 10px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 2px -2px 10px 0px rgba(0,0,0,0.5);
+  box-shadow: 2px -2px 10px 0px rgba(0,0,0,0.5);
+}
+
+.navigation{
+  grid-area: navigation;  /* Identifies this element as an area to use for the grid in the parent element (see intro-wrapper -> grid-template-areas). This identifier does not have to be the same as the class name. */
+
+  background-color: var(--mainColour);
+
+  border-bottom: 1px solid var(--borderColour);
+
+  /* Set the top corner radius. Note, the same is done in "intro-wrapper". It has to be this way for the corners to be rounded */
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  display: flex;  /* Define how to display the children elements of this element */
+  justify-content: space-between; /* Display all children elements as far from each other as possible (horizontally). F.e. if we have two elements, they will be displayed on the opposite sides of the parent element */
+  align-items: center;  /* Align the content vertically. Note, we don't use "align-content". For info why, see: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+}
+
+.nav-buttons{
+  display: flex;  /* Display the nav buttons (the children) inline */
+  margin: 0;
+  padding: 10px;
+}
+
+.window-button{
+  background-color: black;  /* Default colour */
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;   /* For a circle, define the radius at 50% */
+  margin: 3px;
+}
+
+#button-1{
+  background-color: #ff6259;  /* Red */
+  cursor: pointer;
+}
+
+#button-2{
+  background-color: #ffc13d;  /* Yellow */
+}
+
+#button-3{
+  background-color: #17c94b;  /* Green */
+  cursor: pointer;
+}
+
+#nav-links{
+  margin: 0;
+  padding: 10px;
+}
+
+#nav-links li{  /* Style all the "li" elements which are the descendants (children or lower) of the "nav-links" element. This is called a descendant selector. For more info, see: https://www.w3schools.com/css/css_combinators.asp */
+  display: inline-block;  /* Needs a comment!!!!!!!!!!!!!!!!! */
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+#nav-links a{   /* Style the links of the navbar */
+  color: var(--secondaryText);
+}
+
+.left-column{
+  grid-area: "left-column"; /* Identifies this element as an area to use for the grid in the parent element (see intro-wrapper -> grid-template-areas). This identifier does not have to be the same as the class name. */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#profile_picture{
+  width: 200px;
+  border: 2px solid var(--borderColour);
+}
+
+#social-media-header{
+  margin-bottom: 0;
+}
+
+.social-media{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.social-media i{
+  font-size: 30px;
+  color: var(--secondaryText);
+  margin: 15px;
+}
+
+.social-media i:hover{
+  font-size: 35px;
+  color: var(--tertiaryColour);
+  margin-bottom: 10px;
+}
+
+.right-column{
+  grid-area: "right-column";  /* Identifies this element as an area to use for the grid in the parent element (see intro-wrapper -> grid-template-areas). This identifier does not have to be the same as the class name. */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#preview{
+  position: relative;
+  margin-right: 15px;
+}
+
+#preview-shadow{
+  width: 300px;
+  height: 200px;
+  padding-left: 30px;
+  padding-top: 30px;
+  background-color: var(--previewShadow);
+  position: absolute;
+  bottom: 25px;
+  right: 15px;
+}
+
+#preview-content{
+  width: 300px;
+  border: 1.5px solid #17a2b8;
+  background-color: var(--previewBg);
+  padding: 15px;
+  /* padding-left: 25px; */
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1;
+  position: relative;
+}
+
+#preview-title{
+  margin-top: 20px;
+  padding-left: 25px;
+}
+
+#preview-text{
+  /* text-align: justify; */
+  padding-left: 25px;
+}
+
+.corner{
+  width: 7px;
+  height: 7px;
+  background-color: #fff;
+  border: 1.5px solid #17a2b8;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#corner-tl{
+  top: -5px;
+  left: -5px;
+}
+
+#corner-tr{
+  top: -5px;
+  right: -5px;
+}
+
+#corner-bl{
+  bottom: -5px;
+  left: -5px;
+}
+
+#corner-br{
+  bottom: -5px;
+  right: -5px;
+}
+
+/* About section */
+.about-container{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "about-left" "about-right";
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.about-left{
+  grid-area: "about-left";
+
+  padding-right: 15px;
+}
+
+.about-left h3{
+  margin-top: 0;
+}
+
+.about-left p{
+  text-align: justify;
+}
+
+.about-right{
+  grid-area: "about-right";
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.code-snippet{
+  display: grid;
+  grid-template-columns: 2fr 14fr;
+  grid-template-areas: "line-numbering" "code";
+
+  border: 3px solid var(--borderColour);
+}
+
+.code-snippet p{
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.line-numbering{
+  grid-area: "line-numbering";
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  background-color: var(--lineNumberingBgColour);
+}
+
+.line-numbering p{
+  color: var(--lineNumbering);
+}
+
+.code{
+  grid-area: "code";
+
+  margin: 0;
+  background-color: var(--mainColour);
+  padding-left: 5px;
+  padding-right: 35px;
+}
+
+.key{
+  color: var(--tertiaryColour);
+}
+
+.value{
+  color: var(--quaternaryColour);
+}
+
+/* Projects section */
+.projects-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.project{
+  width: 320px;
+  margin: 15px;
+  border: 1px solid var(--borderColour);
+
+  /* Shadow */
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 1);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 1);
+  box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 1);
+}
+
+.project:hover{
+  /* On hover, change the shadow to light blue. */
+  -webkit-box-shadow: 1px 1px 5px 0px var(--borderColour);
+  -moz-box-shadow: 1px 1px 5px 0px var(--borderColour);
+  box-shadow: 1px 1px 5px 0px var(--borderColour);
+}
+
+.thumbnail{
+  display: block;
+  width: inherit;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-preview{
+  background-color: #fff;
+  padding: 15px;
+}
+
+.project-title{
+  color: black;
+  margin: 0;
+}
+
+.project-intro{
+  color: #4b5156;
+  font-size: 14px;
+  /* text-align: justify; */
+}
+
+#projects-view-more{
+  color: #17a2b8;
+}
+
+#projects-view-more:hover{
+  color: #fff;
+}
+
+#contact{
+  display: none;
+}
+
+/* Contact section */
+.contact-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.message-form-container{
+  background-color: var(--mainColour);
+  border: 1px solid var(--borderColour);
+  border-radius: 6px;
+  padding: 30px;
+  margin: auto;
+}
+
+input, textarea{
+  width: 100%;
+  min-width: 500px;
+  max-width: 1000px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: var(--secondaryColour);
+  border: 1px solid var(--borderColour);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+textarea{
+  height: 150px;
+  min-height: 70px;
+  max-height: 500px;
+}
+
+#send{
+  background-color: var(--tertiaryColour);
+}
+
+#send:hover{
+  background-color: var(--mainColour);
+}
+
+
+@media screen and (max-width: 1200px){
+  .main-container{
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .intro-wrapper{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "navigation"
+      "left-column"
+      "right-column";
+  }
+
+  #preview{
+    margin-right: 0;
+    /* margin-top: 30px; */
+    margin-bottom: 55px;
+  }
+
+  .about-container{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "about-left"
+      "about-right";
+  }
+
+  .about-left{
+    padding-right: 0;
+  }
+
+  .about-right{
+    justify-content: center;
+    margin-top: 35px;
+  }
+
+  input, textarea{
+    min-width: 380px;
+    max-width: 400px;
+  }
+
+  textarea{
+    resize: none;
+    height: 250px;
+  }
+}
