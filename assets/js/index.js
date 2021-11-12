@@ -31,7 +31,7 @@ function minimiseWindow(){
   // the same height as the height of the initial window
   // has to be set
   introReplacement.style.height = height;
-  introReplacement.style.display = "block";
+  introReplacement.style.display = "flex";
 
   windowOpen = false;
 }
@@ -102,3 +102,43 @@ function animateWelcomeText(inputAnimation){
 let initialAnimation = setInterval(toggleCursor, 600);
 
 setTimeout(animateWelcomeText, 2400, initialAnimation);
+
+
+let projects = [];
+let projectNumbers = ["one", "two", "three"];
+
+for(number of projectNumbers){
+  let project = {
+    modal: document.getElementById("project-modal-" + number),
+    modalCloseBtn: document.getElementsByClassName("close")[projectNumbers.indexOf(number)],
+    projectShort: document.getElementById("project-" + number)
+  };
+
+  project.projectShort.addEventListener("click", setOpen(project.modal));
+  project.modalCloseBtn.addEventListener("click", setClose(project.modal));
+
+  projects.push(project);
+}
+
+
+function setOpen(modal) {
+  return () => {
+    modal.style.display = "flex";
+  };
+}
+
+function setClose(modal){
+  return () => {
+    modal.style.display = "none";
+  };
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  for(project of projects){
+    if (project.modal == event.target) {
+      project.modal.style.display = "none";
+      break;
+    }
+  }
+}

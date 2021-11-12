@@ -1,3 +1,5 @@
+<!-- Based on the design by Dennis Ivy (https://www.dennisivy.com/) -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,18 +32,19 @@
         </div>
 
         <div id="intro-replacement">
-          <h1 style="margin: 0;">Hello</h1>
+          <h3>Here's a funny picture I found on the Internet</h3>
+          <img src="assets/images/replacement-img.jpg">
         </div>
 
         <!-- The MacOS-like window -->
         <div id="intro-wrapper" class="intro-wrapper">
           <div class="navigation">
             <div class="nav-buttons">
-              <div id="button-1" class="window-button">
+              <div id="button-1" class="window-button clickable">
               </div>
               <div id="button-2" class="window-button">
               </div>
-              <div id="button-3" class="window-button">
+              <div id="button-3" class="window-button clickable">
               </div>
             </div>
 
@@ -55,8 +58,9 @@
             <img id="profile_picture" alt="Profile Picture" src="assets/images/profile_pic.jpg">
             <h5 id="social-media-header">Find me on</h5>
             <div class="social-media">
-              <a href="https://github.com/kamilkuzara" target="_blank"><i class="fa fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/kamil-kuzara/" target="_blank"><i class="fa fa-linkedin"></i></a>
+              <a href="https://github.com/kamilkuzara" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/kamil-kuzara/" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/kamil_kuzara/" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a>
             </div>
           </div>
 
@@ -69,7 +73,7 @@
                 <div id="corner-tr" class="corner"></div>
                 <h3 id="preview-title">Who I am</h3>
                 <p id="preview-text">
-                  3rd year Computer Science student at King's College London with an interest in AI planning and back-end development
+                  Final year Computer Science student at King's College London with an interest in AI planning and back-end development
                 </p>
                 <div id="corner-bl" class="corner"></div>
                 <div id="corner-br" class="corner"></div>
@@ -88,7 +92,12 @@
           <div class="about-left">
             <h3>More about me</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut eleifend sem. Nam fermentum bibendum eros id aliquam. Fusce dignissim, diam nec mattis porttitor, sapien turpis suscipit nunc, eu cursus magna odio vel ex. Nam tellus quam, mollis sollicitudin placerat a, semper in dolor. Sed sed lacinia metus. Phasellus auctor erat consequat finibus ultrices. Praesent tempus rhoncus nibh nec fermentum. Nulla in nisl tincidunt magna aliquet bibendum et id mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin egestas congue dui et pharetra. Pellentesque leo neque, eleifend in sem ac, volutpat pellentesque arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris aliquam, felis quis vulputate ornare, nulla arcu laoreet orci, vel lobortis diam ipsum nec nulla. Integer eget felis molestie, porta quam eget, pharetra velit. Proin tincidunt turpis vitae odio imperdiet porttitor. Vestibulum eros urna, efficitur nec fermentum ac, mollis non purus.
+              I am currently in my final year of an MSci Computer Science programme at King's College London. I have 3 years of experience in Java development and I'm comfortable
+              working with Node.js and React Native. Furthermore, I also have experience in concurrent programming and parallel algorithm design. My main interest in the field of
+              Computer Science is Artificial Intelligence, in particular, automated planning. In fact, my 3rd year individual project was rooted in this area as I designed and
+              implemented parallel versions of JavaFF's planning algorithms. You can read more about the project below.<br><br>
+
+              In my spare time, I enjoy watching Formula 1 and shooting hoops at a basketball court. I'm passionate about physics and I try to extend my knowledge whenever I can.
             </p>
             <p id="download-button"><a href="kamil_kuzara-resume.pdf" download>
                   <i class="fa fa-file"></i>Download my resume
@@ -99,7 +108,24 @@
             <div class="code-snippet">
               <div class="line-numbering">
                 <p>
-                  &nbsp;1<br>&nbsp;2<br>&nbsp;3<br>&nbsp;4<br>&nbsp;5<br>&nbsp;6<br>&nbsp;7<br>&nbsp;8<br>&nbsp;9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18
+                  &nbsp;1<br>
+                  &nbsp;2<br>
+                  &nbsp;3<br>
+                  &nbsp;4<br>
+                  &nbsp;5<br>
+                  &nbsp;6<br>
+                  &nbsp;7<br>
+                  &nbsp;8<br>
+                  &nbsp;9<br>
+                  10<br>
+                  11<br>
+                  12<br>
+                  13<br>
+                  14<br>
+                  15<br>
+                  16<br>
+                  17<br>
+                  18
                 </p>
               </div>
 
@@ -109,18 +135,18 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">name</span>:&nbsp;<span class="value">"Kamil&nbsp;Kuzara"</span>,<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">skills<span>: [<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"Java"</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"Concurrent programming"</span>,<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"NodeJS"</span>,<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"React Native"</span>,<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"MongoDB"</span>,<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"Neo4j"</span>,<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"HTML & CSS"</span><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;],<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">interests</span>: [<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"AI Planning"</span>,<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"Cryptography"</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"Machine Learning"</span>,<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"Physics"</span>,<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"Formula 1"</span>,<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"RaspberryPi"</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"Raspberry Pi"</span><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;]<br>
                   }
                 </p>
@@ -139,37 +165,147 @@
           <div class="projects-list">
 
             <div>
-              <div class="project">
+              <div id="project-one" class="project clickable">
                 <img class="thumbnail" src="./assets/images/pic.jpg">
                 <div class="project-preview">
-                  <h6 class="project-title">Project title</h6>
-                  <p class="project-intro">This is a dummy project description. This is a dummy project description. This is a dummy project description.</p>
+                  <h6 class="project-title">Parallelising JavaFF</h6>
+                  <p class="project-intro">3rd year individual project. The equivalent of a Bachelor's Thesis.</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <div class="project">
-                <img class="thumbnail" src="./assets/images/pic.jpg">
+              <div id="project-two" class="project clickable">
+                <img class="thumbnail" src="./assets/images/pintro-thumbnail.jpg">
                 <div class="project-preview">
-                  <h6 class="project-title">Project title</h6>
-                  <p class="project-intro">This is a dummy project description.</p>
+                  <h6 class="project-title">Pintro</h6>
+                  <p class="project-intro">A mobile networking app developed for an external client.</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <div class="project">
-                <img class="thumbnail" src="./assets/images/pic.jpg">
+              <div id="project-three" class="project clickable">
+                <img class="thumbnail" src="./assets/images/kanban.png">
                 <div class="project-preview">
-                  <h6 class="project-title">Project title</h6>
-                  <p class="project-intro">This is a dummy project description.</p>
+                  <h6 class="project-title">Kanban boards</h6>
+                  <p class="project-intro">A Java-based desktop application for managing Kanban boards.</p>
                 </div>
               </div>
             </div>
 
           </div>
           <!-- <p id="projects-view-more">View more</p> -->
+
+          <!-- Project one modal -->
+          <div id="project-modal-one" class="project-modal">
+
+            <!-- Modal content -->
+            <div class="project-modal-content">
+              <div class="navigation">
+                <div class="nav-buttons">
+                  <div id="button-1" class="window-button close clickable">
+                  </div>
+                  <div id="button-2" class="window-button">
+                  </div>
+                  <div id="button-3" class="window-button">
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-description">
+                <!-- <img class="thumbnail" src="./assets/images/pic.jpg"> -->
+
+                <h2>Parallelising JavaFF</h2>
+                <p>
+                  I completed the project during my penultimate year at university. As it was a substantial individual project, it was the equivalent of a Bachelor's Thesis.
+                  The topic of the project was "Introducing parallelism to the JavaFF planner" and the goal was to analyse the sequential algorithms used by JavaFF - a Java-based
+                  implementation of a popular planner FF - and propose parallel alternatives. <br><br>
+
+                  The project involved a significant amount of research across the field of automated planning. Looking into the relevant literature, I investigated possible
+                  solutions to the problem and gained an in-depth insight into the area of classical planning as well as a broad overview of the entire field. Despite the wealth
+                  of existing research in the area of parallel planning, I did not find a solution that would be feasible to implement into the JavaFF planner without the need to
+                  redesign the entire system. Therefore, I proposed 3 solutions of my own. They parallelised various aspects of the search. <br><br>
+
+                  I am especially proud of the Parallel Enforced Hill-Climbing Search algorithm of my invention as it successfully sped up the search. In fact, on some test problems,
+                  my algorithm turned out to be almost 50% faster than the standard, sequential version. Developing the algorithm required the use of various concurrent programming
+                  techniques such as barriers, mutexes, and a fine-tuned deadlock prevention system. The other solution of my design that performed well was a parallelisation of the
+                  computation of heuristics. Albeit simple conceptually, it required me to redesign the sequential search algorithm to accommodate the use of a thread pool. The added
+                  effort proved to be worth it as the solution was also successful in speeding up the search. <br><br>
+
+                  Working on this project allowed me to learn advanced concepts in concurrent programming and parallel algorithm design. I also got to dive deep into the field of automated
+                  planning and AI and was able to appreciate the complexity of this research area.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Project two modal -->
+          <div id="project-modal-two" class="project-modal">
+
+            <!-- Modal content -->
+            <div class="project-modal-content">
+              <div class="navigation">
+                <div class="nav-buttons">
+                  <div id="button-1" class="window-button close clickable">
+                  </div>
+                  <div id="button-2" class="window-button">
+                  </div>
+                  <div id="button-3" class="window-button">
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-description">
+                <!-- <img class="thumbnail" src="./assets/images/pic.jpg"> -->
+
+                <h2>Pintro</h2>
+                <p>
+                  Pintro is a mobile networking app. Similarly to LinkedIn, its fundamental objectives are to enable connections in a professional and business setting. The project was developed
+                  by a team of seven as part of a university coursework. We were tasked with developing the app for an external client. The functionality of the app includes features such as user
+                  and business profiles, and a fully fledged real-time chat.<br><br>
+
+                  The system we developed is based on a client-server architecture. The client app (or the front-end, if you will) was developed in React Native and the server (back-end) was based
+                  on Node.js, Express.js framework and MongoDB. This fit in the "JavaScript everywhere" philosophy. The testing of the system was performed with Postman and Jest, and we used Docker
+                  for deployment. The choice of all these technologies was guided by their flexibility and allowed for rapid development. In fact, it enabled us to complete the project in time and
+                  to client's high expectations. Moreover, of all other teams' projects, it was ours that was chosen for deployment by the client.<br><br>
+
+                  Most of my work was at the back-end. I was involved in the modelling of the database. Then, I developed REST API endpoints which enabled interaction with the model. It was important
+                  that the system supported secure connections and log-in functionality. Therefore, I took up the task of implementing some fundamental security measures. Specifically, I implemented
+                  the HTTPS server ensuring security of data in transit, as well as strong password hashing using the PBKDF2 function with salt. I also worked at the front-end developing app components
+                  such as the chat.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Project three modal -->
+          <div id="project-modal-three" class="project-modal">
+
+            <!-- Modal content -->
+            <div class="project-modal-content">
+              <div class="navigation">
+                <div class="nav-buttons">
+                  <div id="button-1" class="window-button close clickable">
+                  </div>
+                  <div id="button-2" class="window-button">
+                  </div>
+                  <div id="button-3" class="window-button">
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-description">
+                <!-- <img class="thumbnail" src="./assets/images/pic.jpg"> -->
+
+                <h2>Kanban boards</h2>
+                <p>Description coming soon...</p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
