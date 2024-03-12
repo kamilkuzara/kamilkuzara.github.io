@@ -32,7 +32,12 @@ html, body{
 }
 
 body{
+  /* "overlay" is DEPRECATED and is no longer supported by modern browsers => the main scrollbar
+  is no longer displayed on top of the content. This can apparently be fixed by using "scrollbar-gutter" property
+  (didn't have any success with that approach) or by using a 3rd party library.
+  For the time being, I just set the background for the scrollbar to the main colour so that it doesn't stand out as much.*/
   overflow: overlay;
+  background-color: var(--mainColour);
 }
 
 h1, h2, h3, h4, h5, h6, strong{
@@ -580,6 +585,10 @@ textarea{
 }
 
 @media screen and (max-width: 800px){
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   .intro-wrapper{
     grid-template-columns: 1fr;
     grid-template-areas:
