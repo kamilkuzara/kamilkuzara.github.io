@@ -54,7 +54,9 @@ function maximiseWindow(){
   windowOpen = true;
 }
 
+
 // -----------------------------------------------------------------------------
+
 
 let cursorOn = true;
 
@@ -104,8 +106,13 @@ let initialAnimation = setInterval(toggleCursor, 600);
 setTimeout(animateWelcomeText, 2400, initialAnimation);
 
 
+// -----------------------------------------------------------------------------
+
+
 let projects = [];
 let projectNumbers = ["one", "two", "three"];
+
+let popups = [];
 
 for(number of projectNumbers){
   let project = {
@@ -118,6 +125,12 @@ for(number of projectNumbers){
   project.modalCloseBtn.addEventListener("click", setClose(project.modal));
 
   projects.push(project);
+
+  popup = project.modal.getElementsByClassName("popup")[0];
+  popups.push(popup);
+
+  popupCloseButton = project.modal.getElementsByClassName("popup-close")[0];
+  popupCloseButton.addEventListener("click", closeAllPopups);
 }
 
 
@@ -130,7 +143,21 @@ function setOpen(modal) {
 function setClose(modal){
   return () => {
     modal.style.display = "none";
+
+    // the user closed the window using the red button,
+    //therefore, they won't need the popup anymore so we can close all popups
+    closeAllPopups();
   };
+}
+
+function closePopup(popup){
+  popup.style.display = "none"
+}
+
+function closeAllPopups(){
+  for(p of popups){
+    closePopup(p);
+  }
 }
 
 // When the user clicks anywhere outside of the modal, close it

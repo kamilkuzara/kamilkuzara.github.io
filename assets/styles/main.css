@@ -14,6 +14,8 @@
   --previewShadow: #111921;
 
   --borderColour: #164D56;
+
+  --popupColour: #0b4c57;
 }
 
 .hidden{
@@ -166,6 +168,78 @@ section{
   display: flex;  /* Display the nav buttons (the children) inline */
   margin: 0;
   padding: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.popup{
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 100%;
+  /* top: 100%; */
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  box-sizing: border-box;
+
+  animation: bounceUp 2s ease;
+}
+
+.popup-arrow{
+  width: 0;
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  margin-left: 15px;
+}
+
+.popup-arrow-upper{
+  display: none;
+  border-color: transparent transparent var(--popupColour) transparent;
+}
+
+.popup-arrow-lower{
+  border-color: var(--popupColour) transparent transparent transparent;
+}
+
+.popup-content{
+  background-color: var(--popupColour);
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup p{
+  margin: 0;
+}
+
+/* @keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+} */
+
+@keyframes bounceUp {
+    0% { transform:translateY(0px); }
+    10% { transform:translateY(-15px); }
+    20% { transform:translateY(0px); }
+    25% { transform:translateY(-7px); }
+    27% { transform:translateY(0px); }
+    29% { transform:translateY(-3px); }
+    30% { transform:translateY(0px); }
+}
+
+@keyframes bounceDown {
+    0% { transform:translateY(0px); }
+    10% { transform:translateY(15px); }
+    20% { transform:translateY(0px); }
+    25% { transform:translateY(7px); }
+    27% { transform:translateY(0px); }
+    29% { transform:translateY(3px); }
+    30% { transform:translateY(0px); }
 }
 
 .window-button{
@@ -662,6 +736,24 @@ textarea{
   }
 
   .project-description p{
+    font-size: 14px;
+  }
+
+  .popup{
+    top: 100%;
+
+    animation: bounceDown 2s ease;
+  }
+
+  .popup-arrow-upper{
+    display: block;
+  }
+
+  .popup-arrow-lower{
+    display: none;
+  }
+
+  .popup p{
     font-size: 14px;
   }
 }
